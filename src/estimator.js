@@ -22,7 +22,7 @@ const time = (days) => {
     period = days.timeToElapse * 7;
   }
   if (days.periodType === 'months') {
-    period = days.timeToElapse*30;
+    period = days.timeToElapse * 30;
   }
   return period;
 };
