@@ -28,7 +28,7 @@ const covid19ImpactEstimator = (data) => {
       hospitalBedsByRequestedTime: Math.trunc(input.totalHospitalBeds * (35 / 100)
         - currentlyInfected1 * (2 ** factor(input)) * (15 / 100)),
       casesForICUByRequestedTime: Math.trunc(currentlyInfected1 * (2 ** factor(input)) * (5 / 100)),
-      casesForVentilatorsByRequestedTime: Math.trunc(currentlyInfected1 * (2 ** factor(input))
+      casesForVentilatorsByRequestedTime: Math.trunc((currentlyInfected1 * (2 ** factor(data)))
         * (2 / 100)),
       dollarsInFlight: Math.trunc((currentlyInfected1 * (2 ** factor(input)) * 0.65 * 1.5) / 30)
     },
@@ -40,8 +40,8 @@ const covid19ImpactEstimator = (data) => {
       hospitalBedsByRequestedTime: Math.trunc(input.totalHospitalBeds * (35 / 100)
         - currentlyInfected2 * (2 ** factor(input)) * (15 / 100)),
       casesForICUByRequestedTime: Math.trunc(currentlyInfected2 * (2 ** factor(input)) * (5 / 100)),
-      casesForVentilatorsByRequestedTime: Math.trunc(currentlyInfected2
-        * (2 ** factor(input)) * (2 / 100)),
+      casesForVentilatorsByRequestedTime: Math.trunc((currentlyInfected2
+        * (2 ** factor(data))) * (2 / 100)),
       dollarsInFlight: Math.trunc((currentlyInfected2 * (2 ** factor(input)) * 0.65 * 1.5) / 30)
     }
   };
