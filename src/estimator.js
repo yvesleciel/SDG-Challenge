@@ -2,7 +2,7 @@
 const factor = (days) => {
   let fact;
   if (days.periodType === 'days') {
-    fact = Math.trunc(1 / 3);
+    fact = Math.trunc(days.timeToElapse / 3);
   }
   if (days.periodType === 'weeks') {
     fact = Math.trunc(7 / 3);
