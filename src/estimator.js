@@ -5,7 +5,7 @@ const factor = (days) => {
     fact = 0;
   } else if (days.periodType === 'weeks') {
     fact = 2;
-  } else {
+  } else if (days.periodType === 'months') {
     fact = Math.trunc(30 / 3);
   }
   return fact;
