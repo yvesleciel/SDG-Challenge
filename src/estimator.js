@@ -1,19 +1,21 @@
 
+const factor = (days) => {
+  let fact;
+  if (days.periodType === 'days') {
+    fact = 0;
+  } if (days.periodType === 'weeks') {
+    fact = 2;
+  } if (days.periodType === 'months') {
+    fact = Math.trunc(30 / 3);
+  }
+  return fact;
+};
+
 const covid19ImpactEstimator = (data) => {
   const input = data;
   const currentlyInfected1 = Math.trunc(data.reportedCases * 10);
   const currentlyInfected2 = Math.trunc(data.reportedCases * 50);
-  const factor = (days) => {
-    let fact;
-    if (days.periodType === 'days') {
-      fact = 0;
-    } if (days.periodType === 'weeks') {
-      fact = 2;
-    } if (days.periodType === 'months') {
-      fact = Math.trunc(30 / 3);
-    }
-    return fact;
-  };
+
   return {
     data: input,
     impact: {
@@ -42,4 +44,6 @@ const covid19ImpactEstimator = (data) => {
     }
   };
 };
+
+
 export default covid19ImpactEstimator;
