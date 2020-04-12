@@ -5,10 +5,10 @@ const factor = (days) => {
     fact = Math.trunc(days.timeToElapse / 3);
   }
   if (days.periodType === 'weeks') {
-    fact = Math.trunc(7 / 3);
+    fact = Math.trunc((days.timeToElapse * 7) / 3);
   }
   if (days.periodType === 'months') {
-    fact = Math.trunc(30 / 3);
+    fact = Math.trunc((days.timeToElapse * 30) / 3);
   }
   return fact;
 };
