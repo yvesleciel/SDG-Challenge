@@ -3,9 +3,11 @@ const factor = (days) => {
   let fact;
   if (days.periodType === 'days') {
     fact = Math.trunc(1 / 3);
-  } if (days.periodType === 'weeks') {
+  }
+  if (days.periodType === 'weeks') {
     fact = Math.trunc(7 / 3);
-  } else if (days.periodType === 'months') {
+  }
+  if (days.periodType === 'months') {
     fact = Math.trunc(30 / 3);
   }
   return fact;
