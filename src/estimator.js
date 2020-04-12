@@ -9,7 +9,7 @@ const covid19ImpactEstimator = (data) => {
       fact = 0;
     } if (days.periodType === 'weeks') {
       fact = 2;
-    } else if (days.periodType === 'months') {
+    } if (days.periodType === 'months') {
       fact = Math.trunc(30 / 3);
     }
     return fact;
