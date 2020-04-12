@@ -5,7 +5,7 @@ const covid19ImpactEstimator = (data) => {
   const currentlyInfected2 = input.reportedCases * 50;
   const factor = (days) => {
     let fact;
-    if (days.periodType === 'day') {
+    if (days.periodType === 'days') {
       fact = 0;
     } if (days.periodType === 'weeks') {
       fact = 2;
