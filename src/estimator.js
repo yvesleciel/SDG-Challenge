@@ -17,8 +17,8 @@ const covid19ImpactEstimator = (data) => {
   const input = data;
   const currentlyInfected1 = Math.trunc(data.reportedCases * 10);
   const currentlyInfected2 = Math.trunc(data.reportedCases * 50);
-  const ICU1 = currentlyInfected1 * (2 ** factor(data));
-  const ICU2 = currentlyInfected2 * (2 ** factor(data));
+  // const ICU1 = currentlyInfected1 * (2 ** factor(data));
+  // const ICU2 = currentlyInfected2 * (2 ** factor(data));
 
   return {
     data: input,
@@ -30,7 +30,8 @@ const covid19ImpactEstimator = (data) => {
       hospitalBedsByRequestedTime: Math.trunc(input.totalHospitalBeds * (35 / 100)
         - currentlyInfected1 * (2 ** factor(input)) * (15 / 100)),
       casesForICUByRequestedTime: Math.trunc(currentlyInfected1 * (2 ** factor(data)) * (5 / 100)),
-      casesForVentilatorsByRequestedTime: Math.trunc(currentlyInfected1 * (2 ** factor(data)) * 0.02),
+      casesForVentilatorsByRequestedTime: Math.trunc(currentlyInfected1 * (2 ** factor(data))
+        * 0.02),
       dollarsInFlight: Math.trunc((currentlyInfected1 * (2 ** factor(data)) * 0.65 * 1.5) / 30)
     },
     severeImpact: {
