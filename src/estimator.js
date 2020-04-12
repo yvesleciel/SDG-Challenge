@@ -13,7 +13,7 @@ const covid19ImpactEstimator = (data) => {
       fact = Math.trunc(30 / 3);
     }
     return fact;
-  }
+  };
   return {
     data: input,
     impact: {
