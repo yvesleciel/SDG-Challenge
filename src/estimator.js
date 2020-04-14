@@ -27,14 +27,10 @@ const time = (days) => {
   return period;
 };
 
-
 const covid19ImpactEstimator = (data) => {
   const input = data;
   const currentlyInfected1 = Math.trunc(data.reportedCases * 10);
   const currentlyInfected2 = Math.trunc(data.reportedCases * 50);
-  // const ICU1 = currentlyInfected1 * (2 ** factor(data));
-  // const ICU2 = currentlyInfected2 * (2 ** factor(data));
-
   return {
     data: input,
     impact: {
@@ -67,6 +63,5 @@ const covid19ImpactEstimator = (data) => {
     }
   };
 };
-
-
 export default covid19ImpactEstimator;
+// ok
