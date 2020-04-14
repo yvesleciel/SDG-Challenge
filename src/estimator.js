@@ -32,8 +32,6 @@ const covid19ImpactEstimator = (data) => {
   const input = data;
   const currentlyInfected1 = Math.trunc(data.reportedCases * 10);
   const currentlyInfected2 = Math.trunc(data.reportedCases * 50);
- 
-
   return {
     data: input,
     impact: {
